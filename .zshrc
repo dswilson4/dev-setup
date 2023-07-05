@@ -116,11 +116,26 @@ alias zrc="vim ~/.zshrc"
 alias ALIAS="alias"
 ######################## CUSTOM ALIAS END ##########################
 
+######################## WORK ALIAS START ##########################
+alias appStart="yarn install && yarn dev"
+alias work="cd workspace/messari-web"
+alias lintFix="yarn run lint-fix && yarn run prettier-fix && yarn build"
+
+######################## WORK ALIAS END ##########################
+
 ######################## CUSTOM FUNCTIONS START ##########################
 function print_custom_aliases() {
   echo "Custom Aliases:"
   echo "---------------"
   awk '/^######################## CUSTOM ALIAS START ##########################/,/^######################## CUSTOM ALIAS END ##########################/ { if ($1 == "alias") print }' ~/.zshrc
+  echo ""
+}
+
+function print_work_aliases() {
+  echo "Work Aliases:"
+  echo "---------------"
+    awk '/^######################## WORK ALIAS START ##########################/,/^######################## WORK ALIAS END ##########################/ { if ($1 == "alias") print }' ~/.zshrc
+  echo ""
 }
 
 function mac_os_default_ruby() {
@@ -138,5 +153,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 ######################## CUSTOM FUNCTION CALLS START ##########################
 print_custom_aliases
+print_work_aliases
 mac_os_default_ruby
 ######################## CUSTOM FUNCTION CALLS END ##########################
