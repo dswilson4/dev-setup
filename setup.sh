@@ -40,7 +40,7 @@ fi
 # fi
 
 # Copy the zshrc file from your github
-curl -o ~/.zshrc https://raw.githubusercontent.com/<your_username>/<your_repo>/main/.zshrc
+curl -o ~/.zshrc https://raw.githubusercontent.com/dswilson4/dev-setup/main/.zshrc
 
 # Switch to zsh
 chsh -s $(which zsh)
